@@ -1,0 +1,17 @@
+@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap-icons/font/bootstrap-icons.css';
+
+.header{
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+
+  .btn{
+    margin-left: 1rem;
+  }
+}
+
+.button-invoice-add{
+  align-self: start;
+  margin-left: auto !important;
+}

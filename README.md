@@ -7,10 +7,10 @@ https://drive.google.com/file/d/0B9gbscdfWqaqOFJtWUs3YjZxOWc/view?usp=sharing
 > npm install
 > 
 Запуск бекенд-сервера
-> npm server
+> npm run server
 > 
 Доступ к приложению в браузере
-> http://localhost:8000
+> http://localhost:3000
 > 
 
 ## Общие требования
@@ -28,12 +28,11 @@ https://drive.google.com/file/d/0B9gbscdfWqaqOFJtWUs3YjZxOWc/view?usp=sharing
 * Интерфейс покупателей (mockups/customers.png)
 
 * Интерфейс товаров (mockups/products.png)
+
 Каждый интерфейс должен быть реализован на отдельном маршруте роутера.
 
 ### Интерфейс покупателей
-* Реализовать список покупателей с
-добавлением/редактированием/удалением элементов (см. раздел Схема
-REST API -> Customers).
+* Реализовать список покупателей с добавлением/редактированием/удалением элементов (см. раздел Схема REST API -> Customers).
 * Создание покупателя должно быть реализовано в модальном окне.
 * Редактирование покупателя должно быть реализовано в модальном окне.
 * Подтверждение удаления покупателя должно быть реализовано в
@@ -59,14 +58,13 @@ REST API -> Customers).
 * Подтверждение удаления счёта должно быть реализовано в модальном
 окне.
 
-### Интерфейс создания нового/редактирования
-существующего счёта
-Реализовать интерфейс создания/редактирования счета со следующим
-функционалом:
+### Интерфейс создания нового/редактирования существующего счёта
+Реализовать интерфейс создания/редактирования счета со следующим функционалом:
 * установление размера скидки
 * выбор покупателя
 * добавление/редактирование количества/удаление товара
 * подсчёт и сохранение суммы ИТОГО (total)
+
 Структуры данных перечислены в разделах:
 * Схема REST API -> Invoices
 * Схема REST API -> InvoiceItems
@@ -82,6 +80,7 @@ REST API -> Customers).
 * name (string)
 * address (string)
 * phone (string)
+
 эндпоинты
 ```
     GET|POST /api/customers
@@ -92,11 +91,13 @@ REST API -> Customers).
 структура
 * id (integer)
 * name (string)
-
 * price (decimal)
+
 эндпоинты
+```
 GET|POST /api/products
 GET|PUT|DELETE /api/products/{id}
+```
 
 ### Invoices
 
@@ -105,6 +106,7 @@ GET|PUT|DELETE /api/products/{id}
 * customer_id (integer)
 * discount (decimal)
 * total (decimal)
+
 эндпоинты
 ```
     GET|POST /api/invoices
@@ -117,6 +119,7 @@ GET|PUT|DELETE /api/products/{id}
 * invoice_id (integer)
 * product_id (integer)
 * quantity (decimal)
+
 эндпоинты
 ```
     GET|POST /api/invoices/{id}/items

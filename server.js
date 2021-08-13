@@ -90,7 +90,7 @@ sequelize
     .then(function () {
         InvoiceItem.truncate();
     })
-    .then(function () {
+    .then(async function () {
         Customer.create({
             name: 'Mark Benson',
             address: '353 Rochester St, Rialto FL 43250',
@@ -129,9 +129,21 @@ sequelize
             price: 15.99
         });
 
-        Product.create({
+        const lastProduct = await Product.create({
             name: 'Neon Green Hat',
             price: 21.99
+        });
+
+        const newInvoice = await Invoice.create({
+            customer_id: 1,
+            discount: 2,
+            total: 59.98
+        });
+
+        InvoiceItem.create({
+            invoice_id: newInvoice.id,
+            product_id: lastProduct.id,
+            quantity: 2
         });
     })
     .catch(function (e) {

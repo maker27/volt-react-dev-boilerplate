@@ -11,12 +11,10 @@ interface Configuration extends webpack.Configuration {
 
 const config: Configuration = {
     mode: 'development',
+    entry: './src/index.tsx',
     output: {
-        path: path.join(__dirname, '/public/'),
-        filename: '[name].js',
         publicPath: '/'
     },
-    entry: './src/index.tsx',
     module: {
         rules: [
             {
@@ -44,7 +42,7 @@ const config: Configuration = {
         ]
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js']
+        extensions: ['', '.tsx', '.ts', '.js', '.css']
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -62,9 +60,9 @@ const config: Configuration = {
     ],
     devtool: 'eval-source-map',
     devServer: {
-        contentBase: path.join(__dirname, 'build'),
+        contentBase: path.join(__dirname, 'public'),
         historyApiFallback: true,
-        port: 8000,
+        port: 3000,
         open: true,
         hot: true
     }
