@@ -19,6 +19,7 @@ const LabeledSelect: FC<TLabeledSelectProps> = ({ id, label, value, options, cla
         <Form.Group className={'mb-3 ' + className} controlId={id}>
             <Form.Label className="fw-bold">{label}</Form.Label>
             <Select
+                inputId={id}
                 searchable
                 isClearable={true}
                 name="form-field-name"
