@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductForm changes name field 2`] = `
+<DocumentFragment>
+  <form
+    class=""
+  >
+    <div
+      class="mb-3 "
+    >
+      <label
+        class="fw-bold form-label"
+        for="form-product-name"
+      >
+        Name
+      </label>
+      <input
+        class="form-control"
+        id="form-product-name"
+        maxlength="255"
+        placeholder="Product Name"
+        type="text"
+        value="Test Name"
+      />
+    </div>
+    <div
+      class="mb-3 "
+    >
+      <label
+        class="fw-bold form-label"
+        for="form-product-price"
+      >
+        Price (0.00)
+      </label>
+      <input
+        class="form-control"
+        id="form-product-price"
+        maxlength="255"
+        placeholder="00.00"
+        type="text"
+        value="23.39"
+      />
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`ProductForm renders form 1`] = `
+<DocumentFragment>
+  <form
+    class=""
+  >
+    <div
+      class="mb-3 "
+    >
+      <label
+        class="fw-bold form-label"
+        for="form-product-name"
+      >
+        Name
+      </label>
+      <input
+        class="form-control"
+        id="form-product-name"
+        maxlength="255"
+        placeholder="Product Name"
+        type="text"
+        value="Product 101"
+      />
+    </div>
+    <div
+      class="mb-3 "
+    >
+      <label
+        class="fw-bold form-label"
+        for="form-product-price"
+      >
+        Price (0.00)
+      </label>
+      <input
+        class="form-control"
+        id="form-product-price"
+        maxlength="255"
+        placeholder="00.00"
+        type="text"
+        value="23.39"
+      />
+    </div>
+  </form>
+</DocumentFragment>
+`;
