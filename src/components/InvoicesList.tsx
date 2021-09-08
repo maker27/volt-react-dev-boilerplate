@@ -17,7 +17,10 @@ const modalHeaders: TObjectOf<string> = {
 };
 
 export default function InvoicesList(): JSX.Element {
-    const { all: invoices, current: invoice } = useSelector((state: RootState) => state.invoices);
+    const {
+        invoices: { all: invoices, current: invoice },
+        customers: { all: customers }
+    } = useSelector((state: RootState) => state);
     const dispatch = useDispatch();
     const setInvoice = (newInvoice?: IInvoice) => dispatch(setCurrentInvoice(newInvoice));
 
@@ -48,7 +51,7 @@ export default function InvoicesList(): JSX.Element {
                 columns={['#', 'customer', 'discount', 'total', '']}
                 rows={Object.values(invoices).map(({ id, customer_id, discount, total }) => [
                     id,
-                    customer_id,
+                    customers[customer_id]?.name ?? `Unknown Customer #${customer_id}`,
                     discount,
                     total,
                     <>
