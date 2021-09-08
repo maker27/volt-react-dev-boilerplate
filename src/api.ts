@@ -18,7 +18,6 @@ import {
     deleteInvoice,
     deleteInvoiceItem,
     editInvoice,
-    editInvoiceItem,
     setInvoiceItems,
     setInvoices
 } from './store/invoiceSlice';
@@ -167,7 +166,7 @@ class API {
         this.putRequest<IInvoiceItem>(
             'invoices/' + invoiceItemData.invoice_id + '/items/' + id,
             { ...invoiceItemData },
-            editInvoiceItem
+            addInvoiceItem
         );
     }
 

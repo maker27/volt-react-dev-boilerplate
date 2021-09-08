@@ -52,10 +52,6 @@ export const invoiceSlice = createSlice({
             const invoiceItem = action.payload;
             state.items[invoiceItem.product_id] = invoiceItem;
         },
-        editInvoiceItem: (state, action: PayloadAction<IInvoiceItem>) => {
-            const invoiceItem = action.payload;
-            state.items[invoiceItem.product_id] = invoiceItem;
-        },
         deleteInvoiceItem: (state, action: PayloadAction<IInvoiceItem>) => {
             const invoiceItem = action.payload;
             delete state.items[invoiceItem.product_id];
@@ -71,7 +67,6 @@ export const {
     setCurrentInvoice,
     setInvoiceItems,
     addInvoiceItem,
-    editInvoiceItem,
     deleteInvoiceItem
 } = invoiceSlice.actions;
 
