@@ -1,6 +1,9 @@
-import { IInvoiceItem, IProduct, TObjectOf } from './types';
+import { ICustomer, IInvoice, IInvoiceItem, IProduct, TObjectOf } from './types';
 
-export function arrayToObject<T extends { id: number }>(list: T[], prop: keyof T = 'id'): TObjectOf<T> {
+export function arrayToObject<T extends ICustomer | IProduct | IInvoice | IInvoiceItem>(
+    list: T[],
+    prop: keyof T = 'id'
+): TObjectOf<T> {
     return list.reduce((s, v) => ({ ...s, [String(v[prop])]: v }), {});
 }
 
