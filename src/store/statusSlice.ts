@@ -22,9 +22,12 @@ export const statusSlice = createSlice({
     name: 'status',
     initialState,
     reducers: {
-        addStatus: (state, action: PayloadAction<{ type: StatusType | undefined; value: string }>) => {
+        addStatus: (
+            state,
+            action: PayloadAction<{ id: number; type: StatusType | undefined; value: string }>
+        ) => {
             state.list.push({
-                id: Date.now(),
+                id: action.payload.id,
                 type: action.payload.type || StatusType.message,
                 value: action.payload.value
             });

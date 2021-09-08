@@ -54,7 +54,7 @@ class API {
 
     private static setError(e: Error) {
         API.setLoader(false);
-        store.dispatch(addStatus({ type: StatusType.error, value: e.message }));
+        store.dispatch(addStatus({ id: Date.now(), type: StatusType.error, value: e.message }));
         console.error(e);
     }
 
