@@ -2,14 +2,14 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ICustomer, TObjectOf } from '../types';
 import { arrayToObject } from '../utils';
 
-interface customerState {
+interface ICustomerState {
     all: TObjectOf<ICustomer>;
     current: ICustomer;
 }
 
-const emptyCustomer = { id: 0, name: '', address: '', phone: '' };
+export const emptyCustomer = { id: 0, name: '', address: '', phone: '' };
 
-const initialState: customerState = {
+const initialState: ICustomerState = {
     all: {},
     current: emptyCustomer
 };

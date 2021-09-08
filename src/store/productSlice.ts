@@ -2,14 +2,14 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IProduct, TObjectOf } from '../types';
 import { arrayToObject } from '../utils';
 
-interface productState {
+interface IProductState {
     all: TObjectOf<IProduct>;
     current: IProduct;
 }
 
 const emptyProduct = { id: 0, name: '', price: 0 };
 
-const initialState: productState = {
+const initialState: IProductState = {
     all: {},
     current: emptyProduct
 };

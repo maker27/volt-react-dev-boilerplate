@@ -8,12 +8,12 @@ export enum StatusType {
 
 export type TStatus = { id: number; type: StatusType; value: string };
 
-interface statusState {
+interface IStatusState {
     list: Array<TStatus>;
     loading: boolean;
 }
 
-const initialState: statusState = {
+export const initialState: IStatusState = {
     list: [],
     loading: false
 };

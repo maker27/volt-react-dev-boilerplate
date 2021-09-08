@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IInvoice, IInvoiceItem, TObjectOf } from '../types';
 import { arrayToObject } from '../utils';
 
-interface invoiceState {
+interface IInvoiceState {
     all: TObjectOf<IInvoice>;
     current: IInvoice;
     items: TObjectOf<IInvoiceItem>;
@@ -15,7 +15,7 @@ const emptyInvoice = {
     total: 0
 };
 
-const initialState: invoiceState = {
+const initialState: IInvoiceState = {
     all: {},
     current: emptyInvoice,
     items: {}
