@@ -25,11 +25,7 @@ export default function InvoicesList(): JSX.Element {
     const setInvoice = (newInvoice?: IInvoice) => dispatch(setCurrentInvoice(newInvoice));
 
     const [modalOptions, toggleModalVisible] = useModal(() => {
-        switch (modalMode.mode) {
-            case 'delete':
-                api.deleteInvoice(invoice.id);
-                break;
-        }
+        return modalMode.mode === 'delete' && api.deleteInvoice(invoice.id);
     });
     const [modalMode, setModalMode] = useModalState(0);
 

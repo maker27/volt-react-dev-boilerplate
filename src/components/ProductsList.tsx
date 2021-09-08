@@ -27,15 +27,13 @@ export default function ProductsList(): JSX.Element {
     const [modalOptions, toggleModalVisible] = useModal(() => {
         switch (modalMode.mode) {
             case 'create':
-                api.createProduct(product);
-                break;
+                return api.createProduct(product);
             case 'edit':
-                api.editProduct(product.id, product);
-                break;
+                return api.editProduct(product.id, product);
             case 'delete':
-                api.deleteProduct(product.id);
-                break;
+                return api.deleteProduct(product.id);
         }
+        return null;
     });
     const [modalMode, setModalMode] = useModalState(0);
 

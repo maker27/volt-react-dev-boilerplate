@@ -27,15 +27,13 @@ export default function CustomersList(): JSX.Element {
     const [modalOptions, toggleModalVisible] = useModal(() => {
         switch (modalMode.mode) {
             case 'create':
-                api.createCustomer(customer);
-                break;
+                return api.createCustomer(customer);
             case 'edit':
-                api.editCustomer(customer.id, customer);
-                break;
+                return api.editCustomer(customer.id, customer);
             case 'delete':
-                api.deleteCustomer(customer.id);
-                break;
+                return api.deleteCustomer(customer.id);
         }
+        return null;
     });
     const [modalMode, setModalMode] = useModalState(0);
 

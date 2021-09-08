@@ -107,11 +107,11 @@ class API {
     }
 
     createCustomer(customerData: TCustomer) {
-        this.postRequest<ICustomer>('customers', customerData, addCustomer);
+        return this.postRequest<ICustomer>('customers', customerData, addCustomer);
     }
 
     editCustomer(customerId: number, customerData: TCustomer) {
-        this.putRequest<ICustomer>(
+        return this.putRequest<ICustomer>(
             'customers/' + customerId,
             { ...customerData, customer_id: customerId },
             editCustomer
@@ -119,15 +119,15 @@ class API {
     }
 
     deleteCustomer(customerId: number) {
-        this.deleteRequest<ICustomer>('customers/' + customerId, deleteCustomer);
+        return this.deleteRequest<ICustomer>('customers/' + customerId, deleteCustomer);
     }
 
     createProduct(productData: TProduct) {
-        this.postRequest<IProduct>('products', productData, addProduct);
+        return this.postRequest<IProduct>('products', productData, addProduct);
     }
 
     editProduct(productId: number, productData: TProduct) {
-        this.putRequest<IProduct>(
+        return this.putRequest<IProduct>(
             'products/' + productId,
             { ...productData, product_id: productId },
             editProduct
@@ -135,7 +135,7 @@ class API {
     }
 
     deleteProduct(productId: number) {
-        this.deleteRequest<IProduct>('products/' + productId, deleteProduct);
+        return this.deleteRequest<IProduct>('products/' + productId, deleteProduct);
     }
 
     createInvoice(invoiceData: TInvoice) {
@@ -143,11 +143,11 @@ class API {
     }
 
     editInvoice(invoiceId: number, invoiceData: Partial<TInvoice>) {
-        this.putRequest<IInvoice>('invoices/' + invoiceId, invoiceData, editInvoice);
+        return this.putRequest<IInvoice>('invoices/' + invoiceId, invoiceData, editInvoice);
     }
 
     deleteInvoice(invoiceId: number) {
-        this.deleteRequest<IInvoice>('invoices/' + invoiceId, deleteInvoice);
+        return this.deleteRequest<IInvoice>('invoices/' + invoiceId, deleteInvoice);
     }
 
     getInvoiceItems(invoiceId: number) {
@@ -163,7 +163,7 @@ class API {
     }
 
     editInvoiceItem({ id, ...invoiceItemData }: IInvoiceItem) {
-        this.putRequest<IInvoiceItem>(
+        return this.putRequest<IInvoiceItem>(
             'invoices/' + invoiceItemData.invoice_id + '/items/' + id,
             { ...invoiceItemData },
             addInvoiceItem
@@ -171,7 +171,7 @@ class API {
     }
 
     deleteInvoiceItem({ id, invoice_id }: IInvoiceItem) {
-        this.deleteRequest<IInvoiceItem>('invoices/' + invoice_id + '/items/' + id, deleteInvoiceItem);
+        return this.deleteRequest<IInvoiceItem>('invoices/' + invoice_id + '/items/' + id, deleteInvoiceItem);
     }
 
     addNewInvoice(invoice: IInvoice, invoiceItems: TInvoiceItem[]) {

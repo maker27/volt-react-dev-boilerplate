@@ -37,10 +37,10 @@ const InvoiceEdit = ({
             invoice={invoice}
             products={products}
             invoiceItems={invoiceItems}
-            setCurrentInvoice={editedInvoice => {
+            setCurrentInvoice={async editedInvoice => {
                 if (editedInvoice) {
                     const { id, ...invoiceData } = editedInvoice;
-                    api.editInvoice(id, invoiceData);
+                    await api.editInvoice(id, invoiceData);
                 }
             }}
             {...props}
