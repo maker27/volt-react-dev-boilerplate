@@ -1,3 +1,6 @@
+### Typescript / React / Redux / Router Dom / Bootstrap / Sass / Axios / Jest / Enzyme
+### Express / Sequelize / Sqlite3
+
 # Тестовое задание на позицию frontend-разработчика в Volt.
 Необходимо выполнить задание используя заготовку, доступную по ссылке:
 https://drive.google.com/file/d/0B9gbscdfWqaqOFJtWUs3YjZxOWc/view?usp=sharing
